@@ -1,0 +1,574 @@
+/* Elvis Frizerski salon - Mobilni CSS (optimizirano za 414x896) */
+
+/* Posebne postavke za iPad i srednje ekrane (431px - 1250px) - eliminiraj smeđu liniju */
+@media screen and (min-width: 431px) and (max-width: 1250px) {
+  /* Osiguraj da se sadržaj centrira bez smeđe linije na desnoj strani */
+  html,
+  body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box;
+  }
+  
+  /* Prevent horizontal scrolling completely */
+  html {
+    overflow-x: hidden !important;
+  }
+  
+  /* Svi kontejneri trebaju biti centrirani i širine 100% */
+  .container-home, 
+  .container-about, 
+  .container-gallery, 
+  .container-price, 
+  .container-whyus, 
+  .container-reviews,
+  .container-contact,
+  .container-location {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  
+  /* Navigacija - osiguraj centriranje i override glavnu max-width: 1200px */
+  .navbar-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto;
+    padding: 0.5em 1em;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar linkovi trebaju biti centrirani */
+  .navbar-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Sadržaj galerije i ostali elementi */
+  .gallery-images {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .gallery-images img {
+    max-width: 90%;
+    height: auto;
+  }
+  
+  /* Cjenik optimizacija za iPad */
+  .price-items {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Kontakt sekcija */
+  .contact-top-section,
+  .contact-bottom-section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
+  
+  /* Dodatno osiguravanje centriranja za sve tekstualne elemente */
+  .home-title,
+  .home-title-elvis,
+  .home-description,
+  .home-special {
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Recenzije i ostali sadržaj */
+  .review-items,
+  .whyus-list {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Osiguravanje da se svi elementi prikazuju u centru bez preklapanja */
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* Specifične postavke za iPad u landscape mode (1180x820) */
+@media screen and (min-width: 1024px) and (max-width: 1180px) and (orientation: landscape) {
+  /* Dodatne optimizacije za iPad landscape */
+  .navbar-container {
+    max-width: 100% !important;
+    padding: 0.5em 2em;
+  }
+  
+  .container-home,
+  .container-about,
+  .container-gallery,
+  .container-price,
+  .container-whyus,
+  .container-reviews,
+  .container-contact {
+    padding: 120px 40px 80px;
+  }
+  
+  /* Optimizacija za galeriju na iPad landscape */
+  .gallery-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .gallery-images img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+/* Općenito postavke za sve ekrane manje od 992px (tableti i mobiteli) */
+@media screen and (max-width: 992px) {
+  /* Prilagodba visine kontejnera - bez fiksnih visina */
+  .container-home, 
+  .container-about, 
+  .container-gallery, 
+  .container-price, 
+  .container-whyus, 
+  .container-reviews {
+    min-height: auto !important; 
+    height: auto !important;
+    padding: 120px 0 80px;
+    overflow: visible;
+  }
+  
+  /* Prilagodba fontova za naslove */
+  .home-title {
+    font-size: 2.8em;
+  }
+  
+  .home-title-elvis {
+    font-size: 3.5em;
+  }
+  
+  /* Povećanje čitljivosti sadržaja */
+  .container-about p,
+  .container-whyus li,
+  .price-intro,
+  .price-subintro,
+  .contact-box p {
+    line-height: 1.5;
+  }
+  
+  /* Prilagodba za galeriju */
+  .gallery-images {
+    gap: 25px;
+  }
+  
+  .gallery-images img {
+    width: 320px;
+    height: 240px;
+  }
+  
+  /* Prilagodba za cjenik */
+  .price-category {
+    font-size: 1.6em;
+    margin-top: 35px;
+    margin-bottom: 15px;
+  }
+  
+  /* Dodani padding svim naslovima */
+  h2, h3 {
+    padding: 0 15px;
+  }
+}
+
+/* Mobilna navigacija za ekrane od 414x896 */
+@media screen and (max-width: 768px) {
+  /* Osnovni stilovi za navigaciju */
+  .navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    padding: 0.5em 1em;
+  }
+  
+  /* Prilagodba navigacije da ima dovoljno prostora za logo i linkove */
+  .navbar-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 8px 0;
+    width: 100%;
+  }
+  
+  /* Linkovi u navigaciji - prilagođeni za mobilne uređaje */
+  .navbar-links a {
+    margin: 4px 8px;
+    font-size: 0.9em;
+    padding: 5px;
+  }
+  
+  /* Logo u navigaciji */
+  .logo img {
+    height: 65px;
+  }
+  
+  /* Više prostora za naslove na početnoj stranici */
+  .home-title {
+    font-size: 2.4em;
+    padding: 0 15px;
+  }
+  
+  .home-title-elvis {
+    font-size: 3.2em;
+    padding: 0 15px;
+    margin-top: 0;
+  }
+  
+  /* Prilagodba veličine fontova za 414x896 */
+  .home-description {
+    font-size: 1.1em;
+    padding: 0 15px;
+  }
+  
+  .home-special {
+    font-size: 1.3em;
+    padding: 0 15px;
+  }
+  
+  /* Prilagodba gumba za kontakt */
+  .contact-btn {
+    font-size: 1.3em;
+    padding: 0.8em 1.6em;
+  }
+  
+  /* Bolja čitljivost teksta u O nama sekciji */
+  .container-about p {
+    font-size: 1.1em;
+    padding: 0 20px;
+    margin-bottom: 1em;
+  }
+  
+  /* Optimizacija galerije za 414px širinu */
+  .gallery-images {
+    gap: 15px;
+  }
+  
+  .gallery-images img {
+    width: 380px;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  /* Poboljšanje čitljivosti cjenika */
+  .price-item {
+    padding: 15px;
+    margin-bottom: 1px;
+  }
+  
+  /* Optimizacija kontakt sekcije za 414px širinu */
+  .contact-top-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 15px;
+  }
+  
+  .contact-column {
+    flex: 0 1 100%;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .contact-bottom-section {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    padding: 0 15px;
+  }
+  
+  .contact-logo-container {
+    margin-right: 0;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .contact-info-container {
+    margin-right: 0;
+    margin-bottom: 15px;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Bolja čitljivost liste "Zašto baš mi" */
+  .whyus-list {
+    padding: 0 20px;
+  }
+  
+  .whyus-list li {
+    font-size: 1.1em;
+    text-align: left;
+    padding: 10px 15px;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+  }
+  
+  /* Osigurati da svi naslovi sekcija budu vidljivi */
+  .container-whyus h2,
+  .container-price h2,
+  .container-reviews h2 {
+    margin-bottom: 25px;
+    padding-top: 40px;
+  }
+}
+
+/* Optimizacija za mobilne uređaje uključujući iPhone 14 Pro Max (430x932) */
+@media screen and (max-width: 430px) {
+  /* Bolja kontrola širine sadržaja - sprječavanje horizontalnog scrollanja */
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  /* Kontejneri - manje širine da sve bude vidljivo */
+  .container-home, 
+  .container-about, 
+  .container-gallery, 
+  .container-price, 
+  .container-whyus, 
+  .container-reviews,
+  .container-contact {
+    padding: 130px 0 60px;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+  
+  /* Navigacija - još manji font i optimizirane margine */
+  .navbar-links a {
+    margin: 3px 5px;
+    font-size: 0.8em;
+  }
+  
+  .navbar-social {
+    margin-right: 5px;
+  }
+  
+  .social-icon {
+    width: 25px;
+    height: 25px;
+    margin: 0 3px;
+  }
+  
+  /* Smanjen font naslova za manje ekrane */
+  .home-title {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+  }
+  
+  .home-title-elvis {
+    font-size: 2.2em;
+    margin-top: 5px;
+  }
+  
+  /* Manji naslovi za sve sekcije */
+  .container-gallery h2,
+  .container-price h2,
+  .container-whyus h2,
+  .container-reviews h2 {
+    font-size: 1.8em;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+  
+  /* Galerija - po uzoru na postojeći stil - sve lijepo vidljivo */
+  .gallery-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  .gallery-images img {
+    width: 100%;
+    height: auto;
+    max-width: 360px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Cjenik - optimiziran za 414px širinu, bez preklapanja */
+  .price-items {
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .price-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 85%;
+    box-sizing: border-box;
+  }
+  
+  .price-title {
+    margin-bottom: 8px;
+    font-size: 1em;
+  }
+  
+  .price-value {
+    text-align: center;
+    font-size: 1.05em;
+    font-weight: bold;
+  }
+  
+  /* Recenzije - manji kontejneri, bolja čitljivost */
+  .review-items {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .review-item {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    width: 85%;
+    box-sizing: border-box;
+  }
+  
+  .review-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+  }
+  
+  .review-author {
+    font-size: 0.95em;
+    font-weight: bold;
+  }
+  
+  .review-stars {
+    margin-left: auto;
+    font-size: 1em;
+  }
+  
+  .review-text {
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+  
+  /* Zašto baš mi - bolja čitljivost bez preklapanja */
+  .whyus-list {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .whyus-list li {
+    padding: 10px;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    border-radius: 5px;
+    width: 85%;
+    box-sizing: border-box;
+  }
+  
+  /* Kontakt - veći razmak za bolje čitanje */
+  .contact-box {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .location-address,
+  .location-hours {
+    width: 75%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+  
+  .contact-box h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  .contact-box p {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+  }
+  
+  .contact-label {
+    font-size: 0.9em;
+    margin-bottom: 3px;
+  }
+  
+  .contact-value {
+    font-size: 1.1em;
+  }
+  
+  /* Razdvojeno vrijeme i dani */
+  .day-label, .time-label {
+    display: inline-block;
+    text-align: left;
+  }
+  
+  .day-label {
+    width: 80px;
+    margin-right: 10px;
+  }
+  
+  /* Mapa - optimizirana visina */
+  .maps-embed {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  .maps-embed iframe {
+    height: 250px;
+    width: 100%;
+    border-radius: 5px;
+  }
+}
